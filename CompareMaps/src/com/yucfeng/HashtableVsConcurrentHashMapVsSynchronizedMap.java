@@ -46,20 +46,16 @@ public class HashtableVsConcurrentHashMapVsSynchronizedMap {
             ExecutorService crunchifyExServer = Executors.newFixedThreadPool(THREAD_POOL_SIZE);
 
             for (int j = 0; j < THREAD_POOL_SIZE; j++) {
-                crunchifyExServer.execute(new Runnable() {
-                    @SuppressWarnings("unused")
-                    @Override
-                    public void run() {
+                crunchifyExServer.execute(() -> {
 
-                        for (int i = 0; i < 500000; i++) {
-                            Integer crunchifyRandomNumber = (int) Math.ceil(Math.random() * 550000);
+                    for (int i1 = 0; i1 < 500000; i1++) {
+                        Integer crunchifyRandomNumber = (int) Math.ceil(Math.random() * 550000);
 
-                            // Retrieve value. We are not using it anywhere
-                            Integer crunchifyValue = crunchifyThreads.get(String.valueOf(crunchifyRandomNumber));
+                        // Retrieve value. We are not using it anywhere
+                        Integer crunchifyValue = crunchifyThreads.get(String.valueOf(crunchifyRandomNumber));
 
-                            // Put value
-                            crunchifyThreads.put(String.valueOf(crunchifyRandomNumber), crunchifyRandomNumber);
-                        }
+                        // Put value
+                        crunchifyThreads.put(String.valueOf(crunchifyRandomNumber), crunchifyRandomNumber);
                     }
                 });
             }
