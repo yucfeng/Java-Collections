@@ -25,6 +25,7 @@ public class HashtableVsConcurrentHashMapVsSynchronizedMap {
         // Test with Hashtable Object
         crunchifyHashTableObject = new Hashtable<String, Integer>();
         crunchifyPerformTest(crunchifyHashTableObject);
+        System.out.println(crunchifyHashTableObject instanceof Map);
 
         // Test with synchronizedMap Object
         crunchifySynchronizedMapObject = Collections.synchronizedMap(new HashMap<String, Integer>());

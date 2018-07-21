@@ -4,6 +4,9 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+/**
+ * https://www.mkyong.com/java8/java-8-how-to-sort-a-map/
+ */
 public class SortByValueExample {
 
     public static void main(String[] argv) {
